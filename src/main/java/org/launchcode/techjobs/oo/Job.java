@@ -6,16 +6,11 @@ public class Job {
 
     private int id;
     private static int nextId = 1;
-
     private String name;
     private Employer employer;
     private Location location;
     private PositionType positionType;
     private CoreCompetency coreCompetency;
-
-    // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
-    //  other five fields. The second constructor should also call the first in order to initialize
-    //  the 'id' field.
 
     public Job() {
         this.id = nextId;
@@ -40,14 +35,7 @@ public class Job {
         }
     }
 
-    // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
-    //  match.
-
-    // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
-    //  and id.
-
     //equals and hashcode methods
-
 
     @Override
     public boolean equals(Object o) {
@@ -71,7 +59,6 @@ public class Job {
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -82,7 +69,6 @@ public class Job {
         }
         return employer;
     }
-
     public void setEmployer(Employer employer) {
         this.employer = employer;
     }
@@ -93,7 +79,6 @@ public class Job {
         }
         return location;
     }
-
     public void setLocation(Location location) {
         this.location = location;
     }
@@ -104,7 +89,6 @@ public class Job {
         }
         return positionType;
     }
-
     public void setPositionType(PositionType positionType) {
         this.positionType = positionType;
     }
@@ -115,7 +99,6 @@ public class Job {
         }
         return coreCompetency;
     }
-
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }

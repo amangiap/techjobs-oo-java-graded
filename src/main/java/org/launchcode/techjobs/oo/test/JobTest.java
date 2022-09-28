@@ -63,7 +63,6 @@ public class JobTest {
         assertEquals(jobResponseTest.toString(), response);
     }
 
-    //test below not completed, only copy/pasted from above
     @Test
     public void testToStringHandlesEmptyField() {
         Job jobEmptyField = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
