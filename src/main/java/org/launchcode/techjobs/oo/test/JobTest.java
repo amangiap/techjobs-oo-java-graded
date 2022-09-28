@@ -66,15 +66,14 @@ public class JobTest {
     //test below not completed, only copy/pasted from above
     @Test
     public void testToStringHandlesEmptyField() {
-        Job jobEmptyField = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        String response = "\n" +
-                "ID: " + jobEmptyField.getId() + "\n" +
-                "Name: " + jobEmptyField.getName() + "\n" +
-                "Employer: " + jobEmptyField.getEmployer() + "\n" +
-                "Location: " + jobEmptyField.getLocation() + "\n" +
-                "Position Type: " + jobEmptyField.getPositionType() + "\n" +
-                "Core Competency: " +jobEmptyField.getCoreCompetency() + "\n";
-        assertEquals(jobEmptyField.toString(), response);
+        Job jobEmptyField = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+
+        Assert.assertEquals(jobEmptyField.toString(),String.valueOf(jobEmptyField));
+        Assert.assertTrue(jobEmptyField.getEmployer().getValue()=="Data not available");
+        Assert.assertTrue(jobEmptyField.getLocation().getValue()=="Data not available");
+        Assert.assertTrue(jobEmptyField.getCoreCompetency().getValue()=="Data not available");
+        Assert.assertTrue(jobEmptyField.getPositionType().getValue()=="Data not available");
+        Assert.assertEquals(String.valueOf(jobEmptyField),jobEmptyField.toString());
     }
 
 }

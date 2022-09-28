@@ -32,15 +32,12 @@ public class Job {
 
     }
 
-    @Override
-    public String toString() {
-        return "\n" +
-                "ID: " + id + "\n" +
-                "Name: " + name + "\n" +
-                "Employer: " + employer + "\n" +
-                "Location: " + location + "\n" +
-                "Position Type: " + positionType + "\n" +
-                "Core Competency: " + coreCompetency + "\n";
+    public String checkDataAvailability(){
+        if(name.isEmpty()) {
+            return "Data not available";
+        } else {
+            return name;
+        }
     }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
@@ -80,6 +77,9 @@ public class Job {
     }
 
     public Employer getEmployer() {
+        if(employer.toString().isEmpty()){
+            employer.setValue("Data not available");
+        }
         return employer;
     }
 
@@ -88,6 +88,9 @@ public class Job {
     }
 
     public Location getLocation() {
+        if(location.toString().isEmpty()) {
+            location.setValue("Data not available");
+        }
         return location;
     }
 
@@ -96,6 +99,9 @@ public class Job {
     }
 
     public PositionType getPositionType() {
+        if(positionType.toString().isEmpty()) {
+            positionType.setValue("Data not available");
+        }
         return positionType;
     }
 
@@ -104,10 +110,24 @@ public class Job {
     }
 
     public CoreCompetency getCoreCompetency() {
+        if(coreCompetency.toString().isEmpty()) {
+            coreCompetency.setValue("Data not available");
+        }
         return coreCompetency;
     }
 
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+
+    @Override
+    public String toString() {
+        return "\nID: " + id + "\n" +
+                "Name: " + name + "\n" +
+                "Employer: " + employer + "\n" +
+                "Location: " + location + "\n" +
+                "Position Type: " + positionType + "\n" +
+                "Core Competency: " + coreCompetency + "\n";
+    }
+
 }
